@@ -1,0 +1,14 @@
+.c-btn {
+  width: 180px;
+  margin: 0 auto;
+}
+.c-btn__box {
+  border: 1px solid gray;
+  height: 50px;
+  text-align: center;
+}
+.c-btn__text {
+  color: gray;
+  font-size: 15px;
+  padding: 10px;
+}/*# sourceMappingURL=btn.css.map */

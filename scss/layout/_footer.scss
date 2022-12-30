@@ -1,0 +1,38 @@
+.l-footer {
+    padding: 20px;
+
+    &__img {
+        width: 350px;
+        height: auto;
+    }
+
+    &__addText, &__listLink  {
+        color: gray;
+    }
+
+    &__inner, &__list  {
+        display: flex;
+    }
+
+    &__inner {
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    &__listItem {
+        margin-right: 40px;
+    }
+
+    &__listLink {
+        margin-bottom: 10px;
+    }
+
+    &__listLink:hover {
+        color: black;
+    }
+
+    &__copyLight span {
+        color: gray;
+        padding: 20px;
+    }
+}

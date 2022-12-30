@@ -1,0 +1,370 @@
+.l-header {
+    z-index: 999;
+    position: relative;
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 3;
+    }
+
+    &__image {
+        width: 40px;
+        height: auto;
+        object-fit: cover;
+        z-index: 2;
+        display: block;
+        padding: 10px 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__navBox, &__hoge {
+        display: flex;
+    }
+
+    &__navList {
+        display: none;
+    }
+
+    &__navListItem {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__navLink {
+        font-size: 15px;
+        margin-left: 20px;
+        color: #fff;
+    }
+
+    &__navLink:hover {
+        color: #BFBFBF;
+    }
+
+    &__langItem li:first-of-type {
+        color: #BFBFBF;
+    }
+
+    &__langBox::after {
+        position: absolute;
+        top: 50%;
+        left: 35px;
+        width: 0;
+        height: 0;
+        content: '';
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid gray;
+        pointer-events: none;
+        transform: translateY(-50%);
+        margin-top: -2px;
+    }
+
+    &__langList li {
+        position: relative;
+        width: 60px;
+        margin-left: 1px;
+        padding: 5px;
+        color: #fff;
+    }
+
+    &__lang {
+        position: absolute;
+        margin-left: -6px;
+        padding: 0;
+    }
+
+    &__textBox {
+        width: 180px;
+        height: 72px;
+        background-color: black;
+        text-align: center;
+    }
+
+    &__text {
+        font-size: 20px;
+        padding-top: 20px;
+    }
+
+    &__text, &__langJp {
+        color: #fff;
+    }
+
+    &__textBox:hover {
+        background-color: gray;
+    }
+
+    &__boarder {
+        position: relative;
+        height: 72px;
+        width: 75px;
+        display: block;
+        box-sizing: border-box;
+        z-index: 5;
+        background-color: #fff;
+    }
+
+    &__boarder span {
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 50px;
+        background-color: black;
+        border-radius: 2px;
+        display: block;
+        box-sizing: border-box;
+        margin: 12px;
+    }
+
+    &__boarder span:nth-of-type(1) {
+        top: 10px;
+    }
+
+    &__boarder span:nth-of-type(2) {
+        bottom: 10px;
+    }
+
+    &__boarder.changeBolder span:nth-of-type(1) {
+        top: 25px;
+        transform: rotate(45deg);
+    }
+
+    &__boarder.changeBolder span:nth-of-type(2) {
+        top: 25px;
+        transform: rotate(-45deg);
+    }
+
+
+    /* animation */
+    &__animate {
+        display: none;
+    }
+
+    &__hoge {
+        z-index: 9999;
+    }
+
+
+    &__menu {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background:#464646;
+        border: 20px  #e9e9e9 solid;
+    }
+
+    &__menu.panelactive {
+        display: block;
+        transition: 0.1s;
+    }
+
+    &__menuBox2 {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+    }
+
+    &__menuList1, &__menuList2 {
+        display: flex;
+    }
+
+    &__menuList2 div {
+        margin-right: 30px;
+        color: #BFBFBF;
+    }
+
+    &__menuItem {
+        margin-right: 150px;
+    }
+
+    &__menuLink {
+        margin-top: 20px;
+    }
+
+    &__menuLink, &__menuText {
+        color: #fff;
+        font-size: 15px;
+    }
+
+    &__menuLang {
+        margin-top: 100px;
+    }
+
+    // &__arrow {
+    //     position: absolute;
+    //     top: 750px;
+    //     left: 50%;
+    //     animation: sdb 4s infinite 3s;
+    //     opacity: 0;
+    // }
+
+    &__arrowImg {
+        width: 10px;
+        height: 50px;
+        position: absolute;
+        top: 750px;
+        left: 50%;
+        animation: sdb 4s infinite 3s;
+        // opacity: 0;
+    }
+
+}
+
+.textColor {
+    color: gray;
+}
+
+.backGround {
+    background-color: gray;
+}
+
+
+
+@media screen and (min-width: 1025px) {
+    .l-header {
+        z-index: 999;
+        position: relative;
+
+        &__boarder {
+            display: none;
+        }
+    
+        &__nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            z-index: 3;
+        }
+    
+        &__image {
+            width: 40px;
+            height: auto;
+            object-fit: cover;
+            z-index: 2;
+            display: block;
+            padding: 10px 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &__navList, &__langBox {
+            display: block;
+        }
+    
+    
+        &__navBox {
+            display: flex;
+        }
+    
+        &__navList {
+            width: 100%;
+            position: absolute;
+            top: 25px;
+            z-index: 1;
+        }
+    
+        &__navListItem {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    
+        &__navLink {
+            font-size: 15px;
+            margin-left: 20px;
+            color: #fff;
+        }
+    
+        &__navLink:hover {
+            color: #BFBFBF;
+        }
+    
+        &__langBox {
+            position: relative;
+            width: 80px;
+        }
+    
+        &__langItem li:first-of-type {
+            color: #BFBFBF;
+        }
+    
+        &__langBox::after {
+            position: absolute;
+            top: 50%;
+            left: 35px;
+            width: 0;
+            height: 0;
+            content: '';
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid gray;
+            pointer-events: none;
+            transform: translateY(-50%);
+            margin-top: -2px;
+        }
+    
+        &__langList li {
+            position: relative;
+            width: 60px;
+            margin-left: 1px;
+            padding: 5px;
+            color: #fff;
+        }
+    
+        &__lang {
+            position: absolute;
+            margin-left: -6px;
+            padding: 0;
+            display: none;
+        }
+    
+        &__textBox {
+            width: 180px;
+            height: 72px;
+            background-color: black;
+            text-align: center;
+        }
+    
+        &__text {
+            font-size: 20px;
+            padding-top: 20px;
+        }
+    
+        &__text, &__langJp {
+            color: #fff;
+        }
+    
+        &__textBox:hover {
+            background-color: gray;
+        }
+    
+    
+        /* animation */
+        &__animate {
+            display: none;
+        }
+    
+    }
+
+    .textColor {
+        color: gray;
+    }
+}

@@ -1,0 +1,156 @@
+.p-content {
+
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+
+    &__box {
+        text-align: center;
+    }
+
+    &__itemBox {
+        display: block;
+        justify-content: center;
+    }
+
+    &__sabTitleBox {
+        padding-right: 40px;
+        margin-top: 20px;
+    }
+
+    &__image, &__access {
+        filter: grayscale(100%);
+    }
+
+    &__image {
+        width: 800px;
+        height: auto;
+    }
+
+    &__access {
+        width: 800px;
+        height: 500px;
+    }
+
+    &__titleBox {
+        text-align: center;
+    }
+
+    &__title, &__sabTitle  {
+        color: gray;
+        font-size: 18px;
+    }
+
+    &__text, &__link {
+        color: gray;
+        font-size: 15px;
+    }
+
+    &__linkBox a:hover {
+        color: black;
+    }
+
+    &__linkBox a {
+        padding-right: 1.5em;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    &__linkBox a::after {
+        content: "→";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    &__message {
+        color: gray;
+        font-size: 15px;
+    }
+
+}
+
+.grayscale {
+    filter: none;
+    transition: 5.0s;
+}
+
+
+@media screen and (min-width: 1025px) {
+    .p-content {
+
+        width: 960px;
+        margin: 0 auto;
+    
+        &__box {
+            text-align: center;
+        }
+    
+        &__itemBox {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    
+        &__sabTitleBox {
+            width: 50%;
+            padding-right: 40px;
+        }
+    
+        &__image {
+            width: 500px;
+            height: auto;
+            filter: grayscale(100%);
+        }
+    
+        &__access {
+            filter: grayscale(100%);
+            width: 950px;
+            height: 500px;
+        }
+    
+        &__titleBox {
+            text-align: center;
+        }
+    
+        &__title, &__sabTitle  {
+            color: gray;
+            font-size: 18px;
+        }
+    
+        &__text, &__link {
+            color: gray;
+            font-size: 15px;
+        }
+    
+        &__linkBox a:hover {
+            color: black;
+        }
+    
+        &__linkBox a {
+            padding-right: 1.5em;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+        }
+    
+        &__linkBox a::after {
+            content: "→";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+    
+        &__message {
+            color: gray;
+            font-size: 15px;
+        }
+    
+    }
+
+    .grayscale {
+        filter: none;
+        transition: 5.0s;
+    }
+
+}

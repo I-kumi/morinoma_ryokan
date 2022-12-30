@@ -1,0 +1,52 @@
+.c-noteBtn {
+    width: 280px;
+    margin: 0 auto;
+
+    &__box {
+        border: 1px solid gray;
+        height: 40px;
+        text-align: center;
+    }
+
+    &__box:hover {
+        background-color: gray;
+    }
+
+    &__text {
+        color: gray;
+        font-size: 10px;
+        padding: 10px;
+        padding: 12px;
+    }
+
+    &__text:hover {
+        color: #fff;
+    }
+}
+
+
+.c-btn {
+    width: 180px;
+    margin: 0 auto;
+
+    &__box {
+        border: 1px solid gray;
+        height: 50px;
+        text-align: center;
+    }
+
+    &__box:hover {
+        background-color: gray;
+    }
+
+    &__text {
+        color: gray;
+        font-size: 15px;
+        padding: 10px;
+        padding: 15px;
+    }
+
+    &__text:hover {
+        color: #fff;
+    }
+}
