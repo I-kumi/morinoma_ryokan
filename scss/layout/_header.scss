@@ -1,6 +1,7 @@
 .l-header {
-    z-index: 999;
     position: relative;
+    z-index: 30;
+    display: none;
 
     &__nav {
         position: fixed;
@@ -11,14 +12,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        z-index: 3;
     }
 
-    &__image {
+    &__img {
         width: 40px;
         height: auto;
         object-fit: cover;
-        z-index: 2;
         display: block;
         padding: 10px 24px;
         position: absolute;
@@ -26,7 +25,7 @@
         left: 0;
     }
 
-    &__navBox, &__hoge {
+    &__navBox, &__btn {
         display: flex;
     }
 
@@ -34,7 +33,7 @@
         display: none;
     }
 
-    &__navListItem {
+    &__navItem {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -48,39 +47,6 @@
 
     &__navLink:hover {
         color: #BFBFBF;
-    }
-
-    &__langItem li:first-of-type {
-        color: #BFBFBF;
-    }
-
-    &__langBox::after {
-        position: absolute;
-        top: 50%;
-        left: 35px;
-        width: 0;
-        height: 0;
-        content: '';
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 4px solid gray;
-        pointer-events: none;
-        transform: translateY(-50%);
-        margin-top: -2px;
-    }
-
-    &__langList li {
-        position: relative;
-        width: 60px;
-        margin-left: 1px;
-        padding: 5px;
-        color: #fff;
-    }
-
-    &__lang {
-        position: absolute;
-        margin-left: -6px;
-        padding: 0;
     }
 
     &__textBox {
@@ -103,14 +69,19 @@
         background-color: gray;
     }
 
+    &__btn {
+        position: relative;
+        z-index: 30;
+    }
+
     &__boarder {
         position: relative;
         height: 72px;
         width: 75px;
         display: block;
         box-sizing: border-box;
-        z-index: 5;
         background-color: #fff;
+        z-index: 30;
     }
 
     &__boarder span {
@@ -133,47 +104,99 @@
         bottom: 10px;
     }
 
-    &__boarder.changeBolder span:nth-of-type(1) {
+    &__boarder.js-bolder span:nth-of-type(1) {
         top: 25px;
         transform: rotate(45deg);
     }
 
-    &__boarder.changeBolder span:nth-of-type(2) {
+    &__boarder.js-bolder span:nth-of-type(2) {
         top: 25px;
         transform: rotate(-45deg);
     }
 
-
-    /* animation */
-    &__animate {
-        display: none;
+    /*レイアウトを整える*/
+    &__navLang div {
+        padding: 5px 0;
     }
 
-    &__hoge {
-        z-index: 9999;
+    &__lang {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__lang li {
+        padding: 5px 0;
+    }
+
+
+    &__navLang {
+        display: none;
     }
 
 
     &__menu {
         position: fixed;
-        z-index: 999;
+        z-index: 20;
         top: 0;
-        display: none;
+        left: 0;
+        border: 20px solid #EAEAEA;
         width: 100%;
         height: 100vh;
-        background:#464646;
-        border: 20px  #e9e9e9 solid;
+        padding: 40px;
+        color: #fff;
+        height: 100%;
+        display: none;
+        background-color: #464646;
+        box-sizing: border-box;
+        flex-wrap: wrap;
     }
 
-    &__menu.panelactive {
+
+    &__menu.js-active {
         display: block;
         transition: 0.1s;
     }
 
+    &__menuBox1 {
+        padding-top: 200px;
+        max-width: initial;
+    }
+
+    &__box1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__box1 div {
+        width: calc(100% / 3);
+    }
+
+    &__box2 {
+        display: flex;
+    }
+
+    &__box2 div {
+        display: inline-block;
+        margin-right: 2em;
+    }
+
+
+    &__boxInner div {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
     &__menuBox2 {
         position: absolute;
-        top: 25%;
-        left: 10%;
+        bottom: 50px;
+        left: 40px;
+        width: calc(100% - 80px);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__box2 a {
+        color: #BFBFBF;
     }
 
     &__menuList1, &__menuList2 {
@@ -201,40 +224,25 @@
     &__menuLang {
         margin-top: 100px;
     }
-
-    // &__arrow {
-    //     position: absolute;
-    //     top: 750px;
-    //     left: 50%;
-    //     animation: sdb 4s infinite 3s;
-    //     opacity: 0;
-    // }
-
-    &__arrowImg {
-        width: 10px;
-        height: 50px;
-        position: absolute;
-        top: 750px;
-        left: 50%;
-        animation: sdb 4s infinite 3s;
-        // opacity: 0;
-    }
-
 }
 
-.textColor {
+/* header部分に背景色が付いたら文字色切替 */
+.js-textColor {
     color: gray;
 }
 
-.backGround {
+/* ナビゲーションメニューをクリックでモーダルの背景色を切替 */
+.js-modalBackground{
     background-color: gray;
 }
 
-
+/* メインページがheader部分までスクロールされた時の表示切り替え */
+.js-appear {
+    display: none;
+}
 
 @media screen and (min-width: 1025px) {
     .l-header {
-        z-index: 999;
         position: relative;
 
         &__boarder {
@@ -250,14 +258,12 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            z-index: 3;
         }
     
-        &__image {
+        &__img {
             width: 40px;
             height: auto;
             object-fit: cover;
-            z-index: 2;
             display: block;
             padding: 10px 24px;
             position: absolute;
@@ -265,7 +271,7 @@
             left: 0;
         }
 
-        &__navList, &__langBox {
+        &__navList, &__navLang {
             display: block;
         }
     
@@ -278,10 +284,9 @@
             width: 100%;
             position: absolute;
             top: 25px;
-            z-index: 1;
         }
     
-        &__navListItem {
+        &__navItem {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -297,7 +302,7 @@
             color: #BFBFBF;
         }
     
-        &__langBox {
+        &__navLang {
             position: relative;
             width: 80px;
         }
@@ -306,7 +311,7 @@
             color: #BFBFBF;
         }
     
-        &__langBox::after {
+        &__navLang::after {
             position: absolute;
             top: 50%;
             left: 35px;
@@ -321,7 +326,7 @@
             margin-top: -2px;
         }
     
-        &__langList li {
+        &__navLang {
             position: relative;
             width: 60px;
             margin-left: 1px;
@@ -331,7 +336,6 @@
     
         &__lang {
             position: absolute;
-            margin-left: -6px;
             padding: 0;
             display: none;
         }
@@ -355,16 +359,15 @@
         &__textBox:hover {
             background-color: gray;
         }
-    
-    
-        /* animation */
-        &__animate {
-            display: none;
-        }
-    
     }
 
-    .textColor {
+    /* header部分に背景色が付いたら文字色切替 */
+    .js-textColor {
         color: gray;
+    }
+
+    /* メインページがheader部分までスクロールされた時の表示切り替え */
+    .js-appear {
+        display: none;
     }
 }

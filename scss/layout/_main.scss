@@ -1,10 +1,75 @@
 .l-main {
     width: 100%;
-    z-index: 1;
-    background-color: #fff;
+    box-sizing: border-box;
+
+    &__img {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0%;
+    }
+
+    &__imgBox {
+        background-image: url('../images/bed.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-height: 100%;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__logoBox {
+        position: absolute;
+        left: 80px;
+        bottom: 100px;
+        display: none;
+    }
+
+    &__logoImg {
+        width: 180px;
+        height: auto;
+    }
+
+    &__arrow {
+        bottom: 50px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        display: none;
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &__arrowImg {
+        width: 15px;
+        height: 70px;
+    }
 
     &__title {
         color: gray;
         font-size: 20px;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        top: 100vh;
+        background-color: #fff;
     }
 }

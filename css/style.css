@@ -1,51 +1,37 @@
-/* header animation */
-.change-color {
+body {
+    position: relative;
+}
+
+/* メインページがheader部分までスクロールされたら背景を白にする */
+.js-background {
     background-color: #fff;
     transition: 0.3s;
 }
 
+/* Concept-奥浅草の非日常 太字 */
 .bold {
     font-weight: bolder;
 }
 
-
-/* main animation 画像の色彩変化*/
-
-
-.img {
-    background-image: url('../images/sinsitu2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    max-height: 100%;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
-    background-attachment: fixed;
-    background-position: center center;
-    z-index: 2;
+/* メインページがheader部分までスクロールされた時の色切替 */
+.js-triangle.l-header__navLang::after {
+    border-top-color: #fff;
 }
 
-
-.logoBox {
-    position: absolute;
-    left: 30px;
-    bottom: 50px;
-    display: block;
-    z-index: 10;
+/* ご予約 / 料金-コピーアイコンの装飾 */
+.fa-clone {
+    margin-left: 5px;
 }
 
-.logoImg {
-    width: 100px;
-    height: auto;
-}
-
-.listBackground {
+/* ドロップダウンメニューの背景色 */
+.js-listBackground {
     background-color: #fff;
 }
 
 @media screen and (min-width: 1025px) {
-    .change-color {
+    /* メインページがheader部分までスクロールされたらheader部分に下線をつける*/
+    .js-background {
         border-bottom: 1px solid gainsboro;
     }
+
 }

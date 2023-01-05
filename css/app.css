@@ -1,8 +1,9 @@
 @charset "UTF-8";
 .l-header {
-  z-index: 999;
   position: relative;
-  /* animation */
+  z-index: 30;
+  display: none;
+  /*レイアウトを整える*/
 }
 .l-header__nav {
   position: fixed;
@@ -13,27 +14,25 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  z-index: 3;
 }
-.l-header__image {
+.l-header__img {
   width: 40px;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: 2;
   display: block;
   padding: 10px 24px;
   position: absolute;
   top: 0;
   left: 0;
 }
-.l-header__navBox, .l-header__hoge {
+.l-header__navBox, .l-header__btn {
   display: flex;
 }
 .l-header__navList {
   display: none;
 }
-.l-header__navListItem {
+.l-header__navItem {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -45,35 +44,6 @@
 }
 .l-header__navLink:hover {
   color: #BFBFBF;
-}
-.l-header__langItem li:first-of-type {
-  color: #BFBFBF;
-}
-.l-header__langBox::after {
-  position: absolute;
-  top: 50%;
-  left: 35px;
-  width: 0;
-  height: 0;
-  content: "";
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid gray;
-  pointer-events: none;
-  transform: translateY(-50%);
-  margin-top: -2px;
-}
-.l-header__langList li {
-  position: relative;
-  width: 60px;
-  margin-left: 1px;
-  padding: 5px;
-  color: #fff;
-}
-.l-header__lang {
-  position: absolute;
-  margin-left: -6px;
-  padding: 0;
 }
 .l-header__textBox {
   width: 180px;
@@ -91,14 +61,18 @@
 .l-header__textBox:hover {
   background-color: gray;
 }
+.l-header__btn {
+  position: relative;
+  z-index: 30;
+}
 .l-header__boarder {
   position: relative;
   height: 72px;
   width: 75px;
   display: block;
   box-sizing: border-box;
-  z-index: 5;
   background-color: #fff;
+  z-index: 30;
 }
 .l-header__boarder span {
   position: absolute;
@@ -117,38 +91,79 @@
 .l-header__boarder span:nth-of-type(2) {
   bottom: 10px;
 }
-.l-header__boarder.changeBolder span:nth-of-type(1) {
+.l-header__boarder.js-bolder span:nth-of-type(1) {
   top: 25px;
   transform: rotate(45deg);
 }
-.l-header__boarder.changeBolder span:nth-of-type(2) {
+.l-header__boarder.js-bolder span:nth-of-type(2) {
   top: 25px;
   transform: rotate(-45deg);
 }
-.l-header__animate {
-  display: none;
+.l-header__navLang div {
+  padding: 5px 0;
 }
-.l-header__hoge {
-  z-index: 9999;
+.l-header__lang {
+  margin: 0;
+  padding: 0;
+}
+.l-header__lang li {
+  padding: 5px 0;
+}
+.l-header__navLang {
+  display: none;
 }
 .l-header__menu {
   position: fixed;
-  z-index: 999;
+  z-index: 20;
   top: 0;
-  display: none;
+  left: 0;
+  border: 20px solid #EAEAEA;
   width: 100%;
   height: 100vh;
-  background: #464646;
-  border: 20px #e9e9e9 solid;
+  padding: 40px;
+  color: #fff;
+  height: 100%;
+  display: none;
+  background-color: #464646;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
-.l-header__menu.panelactive {
+.l-header__menu.js-active {
   display: block;
   transition: 0.1s;
 }
+.l-header__menuBox1 {
+  padding-top: 200px;
+  max-width: initial;
+}
+.l-header__box1 {
+  display: flex;
+  justify-content: space-between;
+}
+.l-header__box1 div {
+  width: 33.3333333333%;
+}
+.l-header__box2 {
+  display: flex;
+}
+.l-header__box2 div {
+  display: inline-block;
+  margin-right: 2em;
+}
+.l-header__boxInner div {
+  width: 200px;
+  margin-bottom: 20px;
+}
 .l-header__menuBox2 {
   position: absolute;
-  top: 25%;
-  left: 10%;
+  bottom: 50px;
+  left: 40px;
+  width: calc(100% - 80px);
+  display: flex;
+  justify-content: space-between;
+}
+.l-header__box2 a {
+  color: #BFBFBF;
 }
 .l-header__menuList1, .l-header__menuList2 {
   display: flex;
@@ -170,29 +185,25 @@
 .l-header__menuLang {
   margin-top: 100px;
 }
-.l-header__arrowImg {
-  width: 10px;
-  height: 50px;
-  position: absolute;
-  top: 750px;
-  left: 50%;
-  -webkit-animation: sdb 4s infinite 3s;
-          animation: sdb 4s infinite 3s;
-}
 
-.textColor {
+/* header部分に背景色が付いたら文字色切替 */
+.js-textColor {
   color: gray;
 }
 
-.backGround {
+/* ナビゲーションメニューをクリックでモーダルの背景色を切替 */
+.js-modalBackground {
   background-color: gray;
+}
+
+/* メインページがheader部分までスクロールされた時の表示切り替え */
+.js-appear {
+  display: none;
 }
 
 @media screen and (min-width: 1025px) {
   .l-header {
-    z-index: 999;
     position: relative;
-    /* animation */
   }
   .l-header__boarder {
     display: none;
@@ -206,21 +217,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    z-index: 3;
   }
-  .l-header__image {
+  .l-header__img {
     width: 40px;
     height: auto;
     -o-object-fit: cover;
        object-fit: cover;
-    z-index: 2;
     display: block;
     padding: 10px 24px;
     position: absolute;
     top: 0;
     left: 0;
   }
-  .l-header__navList, .l-header__langBox {
+  .l-header__navList, .l-header__navLang {
     display: block;
   }
   .l-header__navBox {
@@ -230,9 +239,8 @@
     width: 100%;
     position: absolute;
     top: 25px;
-    z-index: 1;
   }
-  .l-header__navListItem {
+  .l-header__navItem {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -245,14 +253,14 @@
   .l-header__navLink:hover {
     color: #BFBFBF;
   }
-  .l-header__langBox {
+  .l-header__navLang {
     position: relative;
     width: 80px;
   }
   .l-header__langItem li:first-of-type {
     color: #BFBFBF;
   }
-  .l-header__langBox::after {
+  .l-header__navLang::after {
     position: absolute;
     top: 50%;
     left: 35px;
@@ -266,7 +274,7 @@
     transform: translateY(-50%);
     margin-top: -2px;
   }
-  .l-header__langList li {
+  .l-header__navLang {
     position: relative;
     width: 60px;
     margin-left: 1px;
@@ -275,7 +283,6 @@
   }
   .l-header__lang {
     position: absolute;
-    margin-left: -6px;
     padding: 0;
     display: none;
   }
@@ -295,29 +302,116 @@
   .l-header__textBox:hover {
     background-color: gray;
   }
-  .l-header__animate {
-    display: none;
-  }
-  .textColor {
+  /* header部分に背景色が付いたら文字色切替 */
+  .js-textColor {
     color: gray;
+  }
+  /* メインページがheader部分までスクロールされた時の表示切り替え */
+  .js-appear {
+    display: none;
   }
 }
 .l-main {
   width: 100%;
-  z-index: 1;
-  background-color: #fff;
+  box-sizing: border-box;
+}
+.l-main__img {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+}
+.l-main__imgBox {
+  background-image: url("../images/bed.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-height: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.l-main__logoBox {
+  position: absolute;
+  left: 80px;
+  bottom: 100px;
+  display: none;
+}
+.l-main__logoImg {
+  width: 180px;
+  height: auto;
+}
+.l-main__arrow {
+  bottom: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: none;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.l-main__arrowImg {
+  width: 15px;
+  height: 70px;
 }
 .l-main__title {
   color: gray;
   font-size: 20px;
 }
+.l-main__content {
+  position: relative;
+  z-index: 10;
+  top: 100vh;
+  background-color: #fff;
+}
 
 .l-footer {
-  padding: 20px;
+  width: 100%;
+  height: 400px;
+  padding-top: 40px;
+  background-color: #fff;
+}
+.l-footer__logoImg {
+  display: flex;
+  justify-content: space-between;
 }
 .l-footer__img {
   width: 350px;
   height: auto;
+}
+.l-footer__img1 {
+  width: 40px;
+  height: 80px;
+}
+.l-footer__img1:hover {
+  opacity: 0.5;
 }
 .l-footer__addText, .l-footer__listLink {
   color: gray;
@@ -346,6 +440,7 @@
 .c-noteBtn {
   width: 280px;
   margin: 0 auto;
+  padding-top: 80px;
 }
 .c-noteBtn__box {
   border: 1px solid gray;
@@ -391,6 +486,7 @@
   width: 800px;
   margin: 0 auto;
   padding: 10px;
+  position: relative;
 }
 .p-content__box {
   text-align: center;
@@ -445,7 +541,8 @@
   font-size: 15px;
 }
 
-.grayscale {
+/* スクロールで画像の色切り替え */
+.js-grayscale {
   filter: none;
   transition: 5s;
 }
@@ -506,7 +603,8 @@
     color: gray;
     font-size: 15px;
   }
-  .grayscale {
+  /* スクロールで画像の色切り替え */
+  .js-grayscale {
     filter: none;
     transition: 5s;
   }
