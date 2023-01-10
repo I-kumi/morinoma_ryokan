@@ -294,8 +294,11 @@
     
         &__navLink {
             font-size: 15px;
-            margin-left: 20px;
             color: #fff;
+        }
+
+        &__navLink a {
+            padding: 0 15px;
         }
     
         &__navLink:hover {

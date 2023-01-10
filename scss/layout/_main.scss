@@ -24,13 +24,13 @@
 
     &__logoBox {
         position: absolute;
-        left: 80px;
+        left: 100px;
         bottom: 100px;
         display: none;
     }
 
     &__logoImg {
-        width: 180px;
+        width: 160px;
         height: auto;
     }
 
@@ -63,7 +63,7 @@
 
     &__title {
         color: gray;
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     &__content {

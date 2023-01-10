@@ -247,8 +247,10 @@
   }
   .l-header__navLink {
     font-size: 15px;
-    margin-left: 20px;
     color: #fff;
+  }
+  .l-header__navLink a {
+    padding: 0 15px;
   }
   .l-header__navLink:hover {
     color: #BFBFBF;
@@ -336,12 +338,12 @@
 }
 .l-main__logoBox {
   position: absolute;
-  left: 80px;
+  left: 100px;
   bottom: 100px;
   display: none;
 }
 .l-main__logoImg {
-  width: 180px;
+  width: 160px;
   height: auto;
 }
 .l-main__arrow {
@@ -383,7 +385,7 @@
 }
 .l-main__title {
   color: gray;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 .l-main__content {
   position: relative;
@@ -394,16 +396,18 @@
 
 .l-footer {
   width: 100%;
-  height: 400px;
-  padding-top: 40px;
+  height: 500px;
   background-color: #fff;
+}
+.l-footer__box {
+  padding: 80px 50px 0 60px;
 }
 .l-footer__logoImg {
   display: flex;
   justify-content: space-between;
 }
 .l-footer__img {
-  width: 350px;
+  width: 250px;
   height: auto;
 }
 .l-footer__img1 {
@@ -421,10 +425,12 @@
 }
 .l-footer__inner {
   justify-content: space-between;
-  padding: 20px;
+}
+.l-footer__addText, .l-footer__inner a {
+  font-size: 15px;
 }
 .l-footer__listItem {
-  margin-right: 40px;
+  margin-right: 50px;
 }
 .l-footer__listLink {
   margin-bottom: 10px;
@@ -434,7 +440,9 @@
 }
 .l-footer__copyLight span {
   color: gray;
-  padding: 20px;
+}
+.l-footer__copyLight span {
+  font-size: 12px;
 }
 
 .c-noteBtn {
@@ -461,12 +469,13 @@
 }
 
 .c-btn {
-  width: 180px;
+  width: 230px;
   margin: 0 auto;
 }
 .c-btn__box {
   border: 1px solid gray;
-  height: 50px;
+  width: 230px;
+  height: 60px;
   text-align: center;
 }
 .c-btn__box:hover {
@@ -515,7 +524,7 @@
 }
 .p-content__title, .p-content__sabTitle {
   color: gray;
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 .p-content__text, .p-content__link {
   color: gray;
@@ -618,11 +627,15 @@
 }
 
 .u-mgTop40 {
-  margin-top: 4em;
+  margin-top: 60px;
 }
 
 .u-mgTop80 {
   margin-top: 80px;
+}
+
+.u-pdTop100 {
+  padding-top: 100px;
 }
 
 /*// ==========================================================================

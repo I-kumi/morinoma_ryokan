@@ -1,5 +1,10 @@
 body {
     position: relative;
+    font-family: sans-serif;
+}
+
+p {
+    line-height: 1.8;
 }
 
 /* メインページがheader部分までスクロールされたら背景を白にする */
