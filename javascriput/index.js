@@ -25,9 +25,9 @@ $(window).on('scroll', function () {
 
 $(window).on('scroll', function () {
     if (765 < $(this).scrollTop()) {
-        $('.l-header__langList').addClass('js-textColor');
+        $('.l-header__langList').addClass('js-langColor');
     } else {
-        $('.l-header__langList').removeClass('js-textColor');
+        $('.l-header__langList').removeClass('js-langColor');
     }
 });
 
@@ -52,24 +52,24 @@ $(window).on('scroll', function () {
 // ドロップダウンメニュー
 $(function() {
     //.dropdown-menuを一旦隠す
-    $('.l-header__langItem').find('.l-header__lang').hide();
+    $('.l-header__langList').find('.l-header__listBox').hide();
     //.menuをhoverした場合
-    $('.l-header__langItem').hover(function(){
+    $('.l-header__langList').hover(function(){
         //.dropdown-menuをslideDown
-        $(".l-header__lang:not(:animated)", this).slideDown();
+        $(".l-header__listBox:not(:animated)", this).slideDown();
         //hoverが外れた場合
     }, function(){
         //.dropdown-menuをslideUp
-        $(".l-header__lang",this).slideUp();
+        $(".l-header__listBox",this).slideUp();
     });
 });
 
 //header部分に背景色が付いたらドロップダウンメニュー部分に背景色をつけるクラスを付与
 $(window).on('scroll', function () {
     if (765 < $(this).scrollTop()) {
-        $('.l-header__lang li').addClass('js-listBackground');
+        $('.l-header__listBox').addClass('js-listBackground');
     } else {
-        $('.l-header__lang li').removeClass('js-listBackground');
+        $('.l-header__listBox').removeClass('js-listBackground');
     }
 });
 

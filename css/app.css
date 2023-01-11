@@ -3,14 +3,14 @@
   position: relative;
   z-index: 30;
   display: none;
-  /*レイアウトを整える*/
+  align-items: center;
 }
 .l-header__nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -39,7 +39,7 @@
 }
 .l-header__navLink {
   font-size: 15px;
-  margin-left: 20px;
+  margin-left: 15px;
   color: #fff;
 }
 .l-header__navLink:hover {
@@ -47,13 +47,13 @@
 }
 .l-header__textBox {
   width: 180px;
-  height: 72px;
+  height: 60px;
   background-color: black;
   text-align: center;
 }
 .l-header__text {
   font-size: 20px;
-  padding-top: 20px;
+  padding-top: 12px;
 }
 .l-header__text, .l-header__langJp {
   color: #fff;
@@ -67,7 +67,7 @@
 }
 .l-header__boarder {
   position: relative;
-  height: 72px;
+  height: 60px;
   width: 75px;
   display: block;
   box-sizing: border-box;
@@ -86,28 +86,18 @@
   margin: 12px;
 }
 .l-header__boarder span:nth-of-type(1) {
-  top: 10px;
+  top: 8px;
 }
 .l-header__boarder span:nth-of-type(2) {
-  bottom: 10px;
+  bottom: 7px;
 }
 .l-header__boarder.js-bolder span:nth-of-type(1) {
-  top: 25px;
+  top: 18px;
   transform: rotate(45deg);
 }
 .l-header__boarder.js-bolder span:nth-of-type(2) {
-  top: 25px;
+  top: 18px;
   transform: rotate(-45deg);
-}
-.l-header__navLang div {
-  padding: 5px 0;
-}
-.l-header__lang {
-  margin: 0;
-  padding: 0;
-}
-.l-header__lang li {
-  padding: 5px 0;
 }
 .l-header__navLang {
   display: none;
@@ -186,22 +176,7 @@
   margin-top: 100px;
 }
 
-/* header部分に背景色が付いたら文字色切替 */
-.js-textColor {
-  color: gray;
-}
-
-/* ナビゲーションメニューをクリックでモーダルの背景色を切替 */
-.js-modalBackground {
-  background-color: gray;
-}
-
-/* メインページがheader部分までスクロールされた時の表示切り替え */
-.js-appear {
-  display: none;
-}
-
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1051px) {
   .l-header {
     position: relative;
   }
@@ -250,43 +225,53 @@
     color: #fff;
   }
   .l-header__navLink a {
-    padding: 0 15px;
+    padding: 0 17px;
   }
   .l-header__navLink:hover {
     color: #BFBFBF;
   }
   .l-header__navLang {
     position: relative;
+    margin: 0 2em 0 0;
     width: 80px;
   }
-  .l-header__langItem li:first-of-type {
-    color: #BFBFBF;
+  .l-header__langList {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: -12px;
+    left: 0;
+    text-align: center;
   }
   .l-header__navLang::after {
     position: absolute;
     top: 50%;
-    left: 35px;
+    right: 10px;
     width: 0;
     height: 0;
     content: "";
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 4px solid gray;
+    border-top: 4px solid #707070;
     pointer-events: none;
     transform: translateY(-50%);
     margin-top: -2px;
+    display: block;
   }
-  .l-header__navLang {
-    position: relative;
-    width: 60px;
-    margin-left: 1px;
-    padding: 5px;
+  .l-header__langList dt {
+    padding: 2px 0;
     color: #fff;
   }
-  .l-header__lang {
-    position: absolute;
-    padding: 0;
+  .l-header__langList dd {
     display: none;
+    padding: 5px 0;
+    color: #fff;
+  }
+  .l-header__langList span {
+    color: #BFBFBF;
+  }
+  .l-header__langList dd li + li {
+    margin-top: 2px;
   }
   .l-header__textBox {
     width: 180px;
@@ -306,6 +291,9 @@
   }
   /* header部分に背景色が付いたら文字色切替 */
   .js-textColor {
+    color: gray;
+  }
+  .js-langColor.l-header__langList dt, .js-langColor.l-header__langList dd {
     color: gray;
   }
   /* メインページがheader部分までスクロールされた時の表示切り替え */
