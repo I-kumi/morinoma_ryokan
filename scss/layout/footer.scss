@@ -1,0 +1,81 @@
+@use "../mixin" as m;
+
+.l-footer {
+    width: 100%;
+    height: 450px;
+    background-color: #fff;
+
+    &__box {
+        padding: 80px 10px 0 20px;
+    }
+
+    &__logoImg {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__img {
+        width: 250px;
+        height: auto;
+    }
+
+    &__img1 {
+        width: 40px;
+        height: 80px;
+    }
+
+    &__img1:hover {
+        opacity: 0.5;
+    }
+
+    &__addText, &__listLink  {
+        color: gray;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @include m.media(sp) {
+            display: block;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__addText, &__inner a {
+        font-size: 15px;
+    }
+
+    &__list  {
+        display: flex;
+
+        @include m.media(sp) {
+            display: none;
+        }
+    }
+
+    &__listBox {
+        display: block;
+    }
+
+    &__listItem {
+        margin-right: 50px;
+    }
+
+    &__listLink {
+        margin-bottom: 10px;
+    }
+
+    &__listLink:hover {
+        color: black;
+    }
+
+    &__copyLight span {
+        color: gray;
+    }
+
+    &__copyLight span {
+        font-size: 12px;
+    }
+
+}

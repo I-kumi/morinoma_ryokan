@@ -1,5 +1,9 @@
+@charset "UTF-8";
 .l-header {
-  z-index: 999;
+  position: relative;
+  z-index: 30;
+  display: none;
+  align-items: center;
 }
 .l-header__nav {
   position: fixed;
@@ -9,60 +13,303 @@
   height: 70px;
   display: flex;
   align-items: center;
-  z-index: 3;
+  justify-content: flex-end;
 }
-.l-header__navBox {
-  display: flex;
-}
-.l-header__navList {
-  top: 50%;
-  width: 100%;
-  margin-left: 20px;
-}
-.l-header__navListItem {
-  display: flex;
-  justify-content: center;
-  margin-left: 80px;
-}
-.l-header__navLink {
-  font-size: 18px;
-  margin-left: 20px;
-  color: #fff;
-}
-.l-header__textBox {
-  width: 180px;
-  height: 80px;
-  background-color: black;
-  text-align: center;
-}
-.l-header__text {
-  font-size: 20px;
-  padding-top: 25px;
-}
-.l-header__logoBox {
-  position: absolute;
-  bottom: 50px;
-  z-index: 3;
-}
-.l-header__logoImg {
-  width: 80px;
-  height: auto;
-}
-.l-header__text, .l-header__langJp, .l-header__langEn {
-  color: #fff;
+@media screen and (max-width: 1050px) {
+  .l-header__nav {
+    height: 55px;
+  }
 }
 .l-header__img {
-  background-image: url("../images/sinsitu2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
+  width: 40px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  padding: 10px 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.l-header__navBox, .l-header__btn {
+  display: flex;
+}
+.l-header__navList {
+  width: 100%;
+  position: absolute;
+  top: 25px;
+}
+@media screen and (max-width: 1050px) {
+  .l-header__navList {
+    display: none;
+  }
+}
+.l-header__navItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.l-header__navLink {
+  font-size: 15px;
+  margin-left: 0;
+  color: #fff;
+}
+@media screen and (max-width: 1050px) {
+  .l-header__navLink {
+    margin-left: 15px;
+  }
+}
+.l-header__navLink a {
+  padding: 0 17px;
+}
+.l-header__navLink:hover {
+  color: #BFBFBF;
+}
+.l-header__navLang {
   position: relative;
-  background-attachment: fixed;
-  background-position: center center;
-  z-index: 2;
-  padding: 5em 0;
+  margin: 0 2em 0 0;
+  width: 80px;
+}
+.l-header__langList {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: -12px;
+  left: 0;
+  text-align: center;
+}
+.l-header__navLang::after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #707070;
+  pointer-events: none;
+  transform: translateY(-50%);
+  margin-top: 2px;
+}
+.l-header__langList dt {
+  padding: 2px 0;
+  color: #fff;
+}
+.l-header__langList dd {
+  display: none;
+  padding: 5px 0;
+  color: #fff;
+}
+.l-header__langList span {
+  color: #BFBFBF;
+}
+.l-header__langList dd li + li {
+  margin-top: 2px;
+}
+.l-header__textBox {
+  width: 180px;
+  height: 72px;
+  background-color: black;
+  text-align: center;
+}
+@media screen and (max-width: 1050px) {
+  .l-header__textBox {
+    height: 60px;
+  }
+}
+.l-header__text {
+  font-size: 20px;
+  padding-top: 20px;
+}
+@media screen and (max-width: 1050px) {
+  .l-header__text {
+    padding-top: 12px;
+  }
+}
+.l-header__text, .l-header__langJp {
+  color: #fff;
+}
+.l-header__textBox:hover {
+  background-color: gray;
+}
+.l-header__btn {
+  position: relative;
+  z-index: 30;
+}
+.l-header__boarder {
+  position: relative;
+  height: 60px;
+  width: 75px;
+  display: none;
+  box-sizing: border-box;
+  background-color: #fff;
+  z-index: 30;
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boarder {
+    display: block;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boarder span {
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 50px;
+    background-color: black;
+    border-radius: 2px;
+    display: block;
+    box-sizing: border-box;
+    margin: 12px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boarder span:nth-of-type(1) {
+    top: 8px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boarder span:nth-of-type(2) {
+    bottom: 7px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boarder.js-bolder span:nth-of-type(1) {
+    top: 18px;
+    transform: rotate(45deg);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boarder.js-bolder span:nth-of-type(2) {
+    top: 18px;
+    transform: rotate(-45deg);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__navList {
+    display: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__navLang {
+    display: none;
+  }
+}
+.l-header__menu {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  border: 20px solid #EAEAEA;
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+  color: #fff;
+  height: 100%;
+  display: none;
+  background-color: #464646;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menu.js-active {
+    display: block;
+    transition: 0.1s;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuBox1 {
+    padding-top: 200px;
+    max-width: initial;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__box1 {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__box1 div {
+    width: 33.3333333333%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__box2 {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__box2 div {
+    display: inline-block;
+    margin-right: 2em;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__boxInner div {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuBox2 {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__box2 a {
+    color: #BFBFBF;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuList1, .l-header__menuList2 {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuList2 div {
+    margin-right: 30px;
+    color: #BFBFBF;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuItem {
+    margin-right: 150px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuLink {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuLink, .l-header__menuText {
+    color: #fff;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .l-header__menuLang {
+    margin-top: 100px;
+  }
+}
+
+/* header部分に背景色が付いたら文字色切替 */
+.js-textColor {
+  color: gray;
+}
+
+.js-langColor.l-header__langList dt, .js-langColor.l-header__langList dd {
+  color: gray;
+}
+
+/* メインページがheader部分までスクロールされた時の表示切り替え */
+.js-appear {
+  display: none;
 }/*# sourceMappingURL=header.css.map */

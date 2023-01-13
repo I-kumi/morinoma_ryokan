@@ -17,6 +17,14 @@ $(window).on('scroll', function () {
 //header部分に背景色が付いたら文字色を切り替えるクラスを付与
 $(window).on('scroll', function () {
     if (765 < $(this).scrollTop()) {
+        $('.l-header__langList').addClass('js-langColor');
+    } else {
+        $('.l-header__langList').removeClass('js-langColor');
+    }
+});
+
+$(window).on('scroll', function () {
+    if (765 < $(this).scrollTop()) {
         $('.l-header__navLink').addClass('js-textColor');
     } else {
         $('.l-header__navLink').removeClass('js-textColor');
@@ -25,11 +33,13 @@ $(window).on('scroll', function () {
 
 $(window).on('scroll', function () {
     if (765 < $(this).scrollTop()) {
-        $('.l-header__langList').addClass('js-langColor');
+        $('.l-header__navLink').addClass('js-hover');
     } else {
-        $('.l-header__langList').removeClass('js-langColor');
+        $('.l-header__navLink').removeClass('js-hover');
     }
 });
+
+
 
 //メインページがheader部分までスクロールされた時に▼の色を変更する
 $(window).on('scroll', function () {

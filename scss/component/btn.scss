@@ -1,0 +1,67 @@
+@use "../mixin" as m;
+
+.c-noteBtn {
+    width: 280px;
+    margin: 0 auto;
+    padding-top: 80px;
+
+    &__box {
+        border: 1px solid gray;
+        height: 40px;
+        text-align: center;
+    }
+
+    &__box:hover {
+        background-color: gray;
+    }
+
+    &__text {
+        color: gray;
+        font-size: 10px;
+        padding: 10px;
+        padding: 12px;
+    }
+
+    &__text:hover {
+        color: #fff;
+    }
+}
+
+
+.c-btn {
+    width: 220px;
+    margin: 0 auto;
+
+    @include m.media(sp) {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    &__box {
+        border: 1px solid gray;
+        height: 55px;
+        text-align: center;
+
+        @include m.media(sp) {
+            height: 50px;
+        }
+    }
+
+    &__box:hover {
+        background-color: gray;
+    }
+
+    &__text {
+        color: gray;
+        font-size: 15px;
+        padding: 14px 11px;
+
+        @include m.media(sp) {
+            padding: 11px 11px;
+        }
+    }
+
+    &__text:hover {
+        color: #fff;
+    }
+}

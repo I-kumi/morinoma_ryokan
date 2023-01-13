@@ -1,0 +1,362 @@
+@use "../mixin" as m;
+
+.l-header {
+    position: relative;
+    z-index: 30;
+    display: none;
+    align-items: center;
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include m.media(md) {
+            height: 55px;
+        }
+    }
+
+    &__img {
+        width: 40px;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        padding: 10px 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__navBox, &__btn {
+        display: flex;
+    }
+
+    &__navList {
+        width: 100%;
+        position: absolute;
+        top: 25px;
+
+        @include m.media(md) {
+            display: none;
+        }
+    }
+
+
+    &__navItem {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    &__navLink {
+        font-size: 15px;
+        margin-left: 0;
+        color: #fff;
+
+        @include m.media(md) {
+            margin-left: 15px;
+        }
+    }
+
+    &__navLink a {
+        padding: 0 17px;
+    }
+
+    &__navLink:hover {
+        color: #BFBFBF;
+    }
+
+    &__navLang {
+        position: relative;
+        margin: 0 2em 0 0;
+        width: 80px;
+    }
+
+    &__langList {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        top: -12px;
+        left: 0;
+        text-align: center;
+    }
+
+    &__navLang::after {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 0;
+        height: 0;
+        content: '';
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #707070;
+        pointer-events: none;
+        transform: translateY(-50%);
+        margin-top: 2px;
+    }
+
+    &__langList dt {
+        padding: 2px 0;
+        color: #fff;
+    }
+
+    &__langList dd {
+
+        display: none;
+        padding: 5px 0;
+        color: #fff;
+    }
+
+    &__langList span {
+        color: #BFBFBF;
+    }
+
+    &__langList dd li+li {
+        margin-top: 2px;
+    }
+
+    &__textBox {
+        width: 180px;
+        height: 72px;
+        background-color: black;
+        text-align: center;
+
+        @include m.media(md) {
+            height: 60px;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        padding-top: 20px;
+
+        @include m.media(md) {
+            padding-top: 12px;
+        }
+    }
+
+    &__text, &__langJp {
+        color: #fff;
+    }
+
+    &__textBox:hover {
+        background-color: gray;
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 30;
+    }
+
+    &__boarder {
+        position: relative;
+        height: 60px;
+        width: 75px;
+        display: none;
+        box-sizing: border-box;
+        background-color: #fff;
+        z-index: 30;
+        @include m.media(md) {
+            display: block;
+        }
+    }
+
+    &__boarder span {
+
+        @include m.media(md) {
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 50px;
+            background-color: black;
+            border-radius: 2px;
+            display: block;
+            box-sizing: border-box;
+            margin: 12px;
+        }
+    }
+
+    &__boarder span:nth-of-type(1) {
+        @include m.media(md) {
+            top: 8px;
+        }
+    }
+
+    &__boarder span:nth-of-type(2) {
+        @include m.media(md) {
+            bottom: 7px;
+        }
+    }
+
+    &__boarder.js-bolder span:nth-of-type(1) {
+        @include m.media(md) {
+            top: 18px;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__boarder.js-bolder span:nth-of-type(2) {
+        @include m.media(md) {
+            top: 18px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__navList {
+        @include m.media(md) {
+            display: none;
+        }
+    }
+
+    &__navLang {
+        @include m.media(md) {
+            display: none;
+        }
+    }
+
+
+    &__menu {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        border: 20px solid #EAEAEA;
+        width: 100%;
+        height: 100vh;
+        padding: 40px;
+        color: #fff;
+        height: 100%;
+        display: none;
+        background-color: #464646;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+
+    }
+
+
+    &__menu.js-active {
+        @include m.media(md) {
+            display: block;
+            transition: 0.1s;
+        }
+    }
+
+    &__menuBox1 {
+        @include m.media(md) {
+            padding-top: 200px;
+            max-width: initial;
+        }
+    }
+
+    &__box1 {
+        @include m.media(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__box1 div {
+        @include m.media(md) {
+            width: calc(100% / 3);
+        }
+    }
+
+    &__box2 {
+        @include m.media(md) {
+            display: flex;
+        }
+    }
+
+    &__box2 div {
+        @include m.media(md) {
+            display: inline-block;
+            margin-right: 2em;
+        }
+    }
+
+
+    &__boxInner div {
+        @include m.media(md) {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__menuBox2 {
+        @include m.media(md) {
+            position: absolute;
+            bottom: 50px;
+            left: 40px;
+            width: calc(100% - 80px);
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__box2 a {
+        @include m.media(md) {
+            color: #BFBFBF;
+        }
+    }
+
+    &__menuList1, &__menuList2 {
+        @include m.media(md) {
+            display: flex;
+        }
+    }
+
+    &__menuList2 div {
+        @include m.media(md) {
+            margin-right: 30px;
+            color: #BFBFBF;
+        }
+    }
+
+    &__menuItem {
+        @include m.media(md) {
+            margin-right: 150px;
+        }
+    }
+
+    &__menuLink {
+        @include m.media(md) {
+            margin-top: 20px;
+        }
+    }
+
+    &__menuLink, &__menuText {
+        @include m.media(md) {
+            color: #fff;
+            font-size: 15px;
+        }
+    }
+
+    &__menuLang {
+        @include m.media(md) {
+            margin-top: 100px;
+        }
+    }
+}
+
+
+/* header部分に背景色が付いたら文字色切替 */
+.js-textColor {
+    color: gray;
+}
+
+.js-langColor.l-header__langList dt, .js-langColor.l-header__langList dd{
+    color: gray;
+}
+
+/* メインページがheader部分までスクロールされた時の表示切り替え */
+.js-appear {
+    display: none;
+}
+

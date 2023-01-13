@@ -1,6 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     position: relative;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
 }
 
 dd, dt, li, p {
@@ -11,11 +15,6 @@ dd, dt, li, p {
 .js-background {
     background-color: #fff;
     transition: 0.3s;
-}
-
-/* Concept-奥浅草の非日常 太字 */
-.bold {
-    font-weight: bolder;
 }
 
 /* メインページがheader部分までスクロールされた時の色切替 */
@@ -33,7 +32,11 @@ dd, dt, li, p {
     background-color: #fff;
 }
 
-@media screen and (min-width: 1025px) {
+.js-hover:hover {
+    color: black;
+}
+
+@media screen and (min-width: 1051px) {
     /* メインページがheader部分までスクロールされたらheader部分に下線をつける*/
     .js-background {
         border-bottom: 1px solid gainsboro;

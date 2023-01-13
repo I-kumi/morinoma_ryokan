@@ -1,14 +1,59 @@
-.c-btn {
-  width: 180px;
+.c-noteBtn {
+  width: 280px;
   margin: 0 auto;
+  padding-top: 80px;
+}
+.c-noteBtn__box {
+  border: 1px solid gray;
+  height: 40px;
+  text-align: center;
+}
+.c-noteBtn__box:hover {
+  background-color: gray;
+}
+.c-noteBtn__text {
+  color: gray;
+  font-size: 10px;
+  padding: 10px;
+  padding: 12px;
+}
+.c-noteBtn__text:hover {
+  color: #fff;
+}
+
+.c-btn {
+  width: 220px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 780px) {
+  .c-btn {
+    width: 300px;
+    margin: 0 auto;
+  }
 }
 .c-btn__box {
   border: 1px solid gray;
-  height: 50px;
+  height: 55px;
   text-align: center;
+}
+@media screen and (max-width: 780px) {
+  .c-btn__box {
+    height: 50px;
+  }
+}
+.c-btn__box:hover {
+  background-color: gray;
 }
 .c-btn__text {
   color: gray;
   font-size: 15px;
-  padding: 10px;
+  padding: 14px 11px;
+}
+@media screen and (max-width: 780px) {
+  .c-btn__text {
+    padding: 11px 11px;
+  }
+}
+.c-btn__text:hover {
+  color: #fff;
 }/*# sourceMappingURL=btn.css.map */

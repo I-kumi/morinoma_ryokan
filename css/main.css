@@ -1,7 +1,106 @@
 .l-main {
+  padding-top: 80px;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.l-main__concept {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.l-main__concept p {
+  text-align: center;
+}
+.l-main__img {
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+}
+.l-main__imgBox {
+  background-image: url("../images/bed.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-height: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.l-main__logoBox {
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+  display: none;
+}
+@media screen and (max-width: 780px) {
+  .l-main__logoBox {
+    left: 70px;
+  }
+}
+.l-main__logoImg {
+  width: 160px;
+  height: auto;
+}
+.l-main__arrow {
+  bottom: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: none;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.l-main__arrowImg {
+  width: 15px;
+  height: 70px;
 }
 .l-main__title {
   color: gray;
-  font-size: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.l-main__conceptText {
+  color: gray;
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+.l-main__content {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  top: 100vh;
+  background-color: #fff;
+}
+.l-main__conceptMessage {
+  color: gray;
+  font-size: 15px;
 }/*# sourceMappingURL=main.css.map */
