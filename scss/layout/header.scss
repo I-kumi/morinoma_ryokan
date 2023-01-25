@@ -58,6 +58,7 @@
         font-size: 15px;
         margin-left: 0;
         color: #fff;
+        cursor: pointer;
 
         @include m.media(md) {
             margin-left: 15px;
@@ -85,6 +86,7 @@
         top: -12px;
         left: 0;
         text-align: center;
+        cursor: pointer;
     }
 
     &__navLang::after {
@@ -127,6 +129,7 @@
         height: 72px;
         background-color: black;
         text-align: center;
+        cursor: pointer;
 
         @include m.media(md) {
             height: 60px;
@@ -163,6 +166,7 @@
         box-sizing: border-box;
         background-color: #fff;
         z-index: 30;
+        cursor: pointer;
         @include m.media(md) {
             display: block;
         }

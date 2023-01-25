@@ -9,6 +9,7 @@
         border: 1px solid gray;
         height: 40px;
         text-align: center;
+        cursor: pointer;
     }
 
     &__box:hover {
@@ -41,6 +42,7 @@
         border: 1px solid gray;
         height: 55px;
         text-align: center;
+        cursor: pointer;
 
         @include m.media(sp) {
             height: 50px;

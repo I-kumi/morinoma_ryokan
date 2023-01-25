@@ -99,6 +99,7 @@
   position: relative;
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
 }
 .p-content__linkBox a::after {
   content: "→";

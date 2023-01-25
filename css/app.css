@@ -53,6 +53,7 @@
   font-size: 15px;
   margin-left: 0;
   color: #fff;
+  cursor: pointer;
 }
 @media screen and (max-width: 1050px) {
   .l-header__navLink {
@@ -77,6 +78,7 @@
   top: -12px;
   left: 0;
   text-align: center;
+  cursor: pointer;
 }
 .l-header__navLang::after {
   position: absolute;
@@ -112,6 +114,7 @@
   height: 72px;
   background-color: black;
   text-align: center;
+  cursor: pointer;
 }
 @media screen and (max-width: 1050px) {
   .l-header__textBox {
@@ -145,6 +148,7 @@
   box-sizing: border-box;
   background-color: #fff;
   z-index: 30;
+  cursor: pointer;
 }
 @media screen and (max-width: 1050px) {
   .l-header__boarder {
@@ -433,6 +437,9 @@
   display: flex;
   justify-content: space-between;
 }
+.l-footer__logoImg a {
+  cursor: pointer;
+}
 .l-footer__img {
   width: 250px;
   height: auto;
@@ -496,6 +503,7 @@
   border: 1px solid gray;
   height: 40px;
   text-align: center;
+  cursor: pointer;
 }
 .c-noteBtn__box:hover {
   background-color: gray;
@@ -524,6 +532,7 @@
   border: 1px solid gray;
   height: 55px;
   text-align: center;
+  cursor: pointer;
 }
 @media screen and (max-width: 780px) {
   .c-btn__box {
@@ -647,6 +656,7 @@
   position: relative;
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
 }
 .p-content__linkBox a::after {
   content: "→";
