@@ -437,9 +437,6 @@
   display: flex;
   justify-content: space-between;
 }
-.l-footer__logoImg a {
-  cursor: pointer;
-}
 .l-footer__img {
   width: 250px;
   height: auto;
@@ -656,7 +653,6 @@
   position: relative;
   display: inline-block;
   text-decoration: none;
-  cursor: pointer;
 }
 .p-content__linkBox a::after {
   content: "→";

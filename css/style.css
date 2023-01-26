@@ -11,6 +11,10 @@ dd, dt, li, p {
     line-height: 1.8;
 }
 
+a{
+    cursor: pointer;
+}
+
 /* メインページがheader部分までスクロールされたら背景を白にする */
 .js-background {
     background-color: #fff;
